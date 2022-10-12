@@ -1,33 +1,22 @@
-
-/**
- * Write a description of class Object here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Object
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Object
-     */
-    public Object()
-    {
-        // initialise instance variables
-        x = 0;
+public class BatterListing{
+    private String name;
+    private double average;
+    
+    public BatterListing(String name, double average){
+        this.name = name;
+        this.average = average;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public String toString(){
+        String listing = name + "   " + average;
+        return listing;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public double getAverage(){
+        return average;
     }
 }
