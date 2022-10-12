@@ -1,33 +1,42 @@
-
-/**
- * Write a description of class Testing here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Testing
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Testing
-     */
-    public Testing()
-    {
-        // initialise instance variables
-        x = 0;
+public class TestListing{
+    public static void main (String[] args){
+        
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public static void mergeSort(BatterListing[] a, int low, int high){
+        if (low == high){
+            return;
+        }
+        
+        int mid = (low + high) / 2;
+        mergeSort(a, low, mid);
+        mergeSort(a,mid + 1, high);
+        merge(a,low,mid,high);
+    }
+    
+    public static void merge( BatterListing[] a, int low, int mid, int high){
+        BatterListing[] temp = new BatterListing[high-low+1];
+        int i = low, j = mid, n = 0;
+        
+        while(i <= mid || j <= high){
+            if(i>mid){
+                temp[n] = a[j];
+                j++;
+            }
+            else if(j>high){
+                temp[n] = a[i];
+                i++;
+            }
+            else if(a[i].getAverage() < a[j].getAverage()){
+                temp[n] = a[j];
+                j++;
+            }
+            else{
+                temp[n] = a[j];
+                j++;
+            }
+            n++;
+        }
+        
     }
 }
