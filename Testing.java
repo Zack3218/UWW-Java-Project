@@ -113,7 +113,7 @@ public class TestListing{
         
         System.out.println("Do you want to rank a batter or a pitchers? (1 or 2) :");
         int number = input.nextInt();
-        if(number != 1 || number !=2){
+        if(number < 1 || number > 2){
             System.out.printf("Invalid choice.%nExiting...%n");
             System.exit(0);
         }
