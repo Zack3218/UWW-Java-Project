@@ -123,6 +123,11 @@ public class TestListing{
             System.out.println("Please enter your batter's batting average: ");
             double userBatterAverage = input.nextDouble();
             input.nextLine();
+            
+            if(userBatterAverage > 1 || userBatterAverage < 0) {
+            System.out.printf("Invalid batting average.%nExiting...%n");
+            System.exit(0);
+            }
         
             list.add(new BatterListing(userBatterName, userBatterAverage));
             Collections.sort(list, Comparator.comparing(BatterListing::getAverage));
@@ -142,6 +147,11 @@ public class TestListing{
             System.out.println("Please enter your pitcher's ERA: ");
             double userPitcherERA = input.nextDouble();
             input.nextLine();
+            
+            if(userPitcherERA > 10 || userPitcherERA < 0) {
+            System.out.printf("Invalid pitcher ERA.%nExiting...%n");
+            
+            }
         
             pitchers.add(new PitcherListing(userPitcherName, userPitcherERA));
             Collections.sort(pitchers, Comparator.comparing(PitcherListing::getERA));
