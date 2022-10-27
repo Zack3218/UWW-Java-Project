@@ -112,42 +112,46 @@ public class TestListing{
         
         Scanner input = new Scanner(System.in);
         
+        System.out.println("Do you want to rank a batter or a pitchers? (1 or 2) :");
+        int number = input.nextInt();
+        input.nextLine();
         
-        
-        
-        System.out.println("Please enter a batter's name: ");
-        String userBatterName = input.nextLine();
+        if(number == 1){
+            System.out.println("Please enter a batter's name: ");
+            String userBatterName = input.nextLine();
        
-        System.out.println("Please enter your batter's batting average: ");
-        double userBatterAverage = input.nextDouble();
-        input.nextLine();
+            System.out.println("Please enter your batter's batting average: ");
+            double userBatterAverage = input.nextDouble();
+            input.nextLine();
         
-        list.add(new BatterListing(userBatterName, userBatterAverage));
-        Collections.sort(list, Comparator.comparing(BatterListing::getAverage));
-        Collections.reverse(list);
+            list.add(new BatterListing(userBatterName, userBatterAverage));
+            Collections.sort(list, Comparator.comparing(BatterListing::getAverage));
+            Collections.reverse(list);
         
-        int i = 0;  
-        for(BatterListing b : list){
-            i++;
-            System.out.print(i + ". ");
-            System.out.println(b);
+            int i = 0;  
+            for(BatterListing b : list){
+                i++;
+                System.out.print(i + ". ");
+                System.out.println(b);
+            }
         }
+        else if(number == 2){
+            System.out.println("Please enter a pitcher's name: ");
+            String userPitcherName = input.nextLine();
         
-        System.out.println("Please enter a pitcher's name: ");
-        String userPitcherName = input.nextLine();
+            System.out.println("Please enter your pitcher's ERA: ");
+            double userPitcherERA = input.nextDouble();
+            input.nextLine();
         
-        System.out.println("Please enter your pitcher's ERA: ");
-        double userPitcherERA = input.nextDouble();
-        input.nextLine();
+            pitchers.add(new PitcherListing(userPitcherName, userPitcherERA));
+            Collections.sort(pitchers, Comparator.comparing(PitcherListing::getERA));
         
-        pitchers.add(new PitcherListing(userPitcherName, userPitcherERA));
-        Collections.sort(pitchers, Comparator.comparing(PitcherListing::getERA));
-        
-        int j = 0;
-        for(PitcherListing b : pitchers){
-            j++;
-            System.out.print(j + ". ");
-            System.out.println(b);
+            int j = 0;
+            for(PitcherListing b : pitchers){
+                j++;
+                System.out.print(j + ". ");
+                System.out.println(b);
+            }
         }
     }
 }
