@@ -8,8 +8,7 @@ public class BatterListing{
     }
     
     public String toString(){
-        String listing = name + "   " + average;
-        return listing;
+        return String.format("%-24s%-5.3f", name, average);
     }
     
     public String getName(){
