@@ -58,7 +58,6 @@ public class TestListing{
         list.add(new BatterListing("Joe Medwick", 0.3236));
         
         ArrayList<PitcherListing> pitchers = new ArrayList<PitcherListing>();
-        
         pitchers.add(new PitcherListing("Ed Walsh", 1.816));
         pitchers.add(new PitcherListing("Addie Joss", 1.887));
         pitchers.add(new PitcherListing("Jim Devlin", 1.896));
@@ -114,6 +113,10 @@ public class TestListing{
         
         System.out.println("Do you want to rank a batter or a pitchers? (1 or 2) :");
         int number = input.nextInt();
+        if(number != 1 || number !=2){
+            System.out.printf("Invalid choice.%nExiting...%n");
+            System.exit(0);
+        }
         input.nextLine();
         
         if(number == 1){
@@ -150,7 +153,7 @@ public class TestListing{
             
             if(userPitcherERA > 10 || userPitcherERA < 0) {
             System.out.printf("Invalid pitcher ERA.%nExiting...%n");
-            
+            System.exit(0);
             }
         
             pitchers.add(new PitcherListing(userPitcherName, userPitcherERA));
