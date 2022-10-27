@@ -1,0 +1,21 @@
+public class PitcherListing{
+    private String name;
+    private double era;
+    
+    public PitcherListing(String name, double era){
+        this.name = name;
+        this.era = era;
+    }
+    
+    public String toString(){
+        return String.format("%-24s%-5.3f", name, era);
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public double getERA(){
+        return era;
+    }
+}
