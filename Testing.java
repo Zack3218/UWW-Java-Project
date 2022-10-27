@@ -142,6 +142,7 @@ public class TestListing{
                 System.out.print(i + ". ");
                 System.out.println(b);
             }
+            input.close();
         }
         else if(number == 2){
             System.out.println("Please enter a pitcher's name: ");
@@ -165,6 +166,7 @@ public class TestListing{
                 System.out.print(j + ". ");
                 System.out.println(b);
             }
+            input.close();
         }
     }
 }
